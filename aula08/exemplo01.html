@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="" id="num1" placeholder="Digite num1">
+
+    <input type="number" name="" id="num2" placeholder="Digite num2">
+
+    <button id="btn_somar" onclick="somar()">Somar</button>
+
+    <button id="btn_subtrair" onclick="subtrair()" > Subtrair </button>
+
+    <button id="btn_dividir" onclick="dividir()"> Dividir </button>
+
+    <button id="dtn_multiplicar" onclick="multiplicar()">Multiplicar</button>
+
+    <button id="btn_limpar" onclick="limpar()">Limpar</button>
+    <hr>
+    <p>O resultado é: <span id="resultado"></span>  </p>
+
+
+    <script>
+        function somar(){
+            var n1 = parseInt(document.getElementById("num1").value);
+            var n2 = parseInt(document.getElementById("num2").value);
+            var result = document.getElementById("resultado")
+            var soma = n1 + n2;
+            result.innerHTML = soma;
+            //console.log(soma);
+            //alert("Num1 é: " + n1 + 
+            //"\n" + "Num2 é: " + n2 + 
+            //"\n" + "A soma é: " + soma);
+        }
+        function subtrair(){
+            var n1 = parseInt(document.getElementById("num1").value);
+            var n2 = parseInt(document.getElementById("num2").value);
+            var result = document.getElementById("resultado")
+            var subtrair = n1 - n2;
+            result.innerHTML = subtrair;
+        }
+        function dividir(){
+            var n1 = parseInt(document.getElementById("num1").value);
+            var n2 = parseInt(document.getElementById("num2").value);
+            var result = document.getElementById("resultado")
+            var dividir = n1 / n2;
+            if (n2 == 0){
+                result.innerHTML = "<b 'style='color:red' Não é permitido dividir por 0</b>";
+            }
+            result.innerHTML = dividir;
+        }
+        function multiplicar(){
+            var n1 = parseInt(document.getElementById("num1").value);
+            var n2 = parseInt(document.getElementById("num2").value);
+            var result = document.getElementById("resultado")
+            var multiplicar = n1 * n2;
+            result.innerHTML = multiplicar;
+        }
+
+        function limpar(){
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            document.getElementById("resultado").innerHTML = "";
+        }
+    </script>
+</body>
+</html>
