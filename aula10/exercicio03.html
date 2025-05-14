@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Limitar Execução de Evento</title>
+</head>
+<body>
+    <input type="text" id="meuInput" placeholder="Digite algo">
+    <button id="meuBotao">Clique aqui</button>
+
+    <script>
+        let valorAnterior = '';  
+
+        document.getElementById('meuBotao').addEventListener('click', function() {
+            const valorInput = document.getElementById('meuInput').value;
+
+            if (valorInput !== valorAnterior) {
+                alert('Valor do input: ' + valorInput);
+                valorAnterior = valorInput;  
+            }
+        });
+    </script>
+</body>
+</html>
